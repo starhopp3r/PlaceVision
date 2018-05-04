@@ -14,6 +14,7 @@
 		31D8C41E209C41B60047139A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31D8C41C209C41B60047139A /* LaunchScreen.storyboard */; };
 		31D8C429209C41B70047139A /* PlaceVisionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8C428209C41B70047139A /* PlaceVisionTests.swift */; };
 		31D8C434209C41B70047139A /* PlaceVisionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D8C433209C41B70047139A /* PlaceVisionUITests.swift */; };
+		31D8C442209C43250047139A /* GoogLeNetPlaces.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 31D8C441209C43250047139A /* GoogLeNetPlaces.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		31D8C42F209C41B70047139A /* PlaceVisionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaceVisionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		31D8C433209C41B70047139A /* PlaceVisionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceVisionUITests.swift; sourceTree = "<group>"; };
 		31D8C435209C41B70047139A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31D8C441209C43250047139A /* GoogLeNetPlaces.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = GoogLeNetPlaces.mlmodel; path = ../../../Downloads/GoogLeNetPlaces.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		31D8C412209C41B30047139A /* PlaceVision */ = {
 			isa = PBXGroup;
 			children = (
+				31D8C441209C43250047139A /* GoogLeNetPlaces.mlmodel */,
 				31D8C413209C41B30047139A /* AppDelegate.swift */,
 				31D8C415209C41B30047139A /* ViewController.swift */,
 				31D8C417209C41B30047139A /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				31D8C416209C41B30047139A /* ViewController.swift in Sources */,
 				31D8C414209C41B30047139A /* AppDelegate.swift in Sources */,
+				31D8C442209C43250047139A /* GoogLeNetPlaces.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
