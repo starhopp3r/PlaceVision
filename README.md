@@ -6,4 +6,3 @@ Written in Swift 4.1 using Xcode on my MacBook Pro.
 
 Copyright © 2018 Nikhil Raghavendra. All rights reserved.
 
-![Imgur](https://i.imgur.com/obQyhfK.png)
