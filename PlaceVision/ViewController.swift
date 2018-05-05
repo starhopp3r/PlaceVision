@@ -72,12 +72,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 }
 
 // MARK: ML Methods
-// The standard Vision workflow is to create a model, create one or more requests, and then create and run
-// a request handler.
 extension ViewController {
     // detectPlace takes in an image of type CIImage
     func detectPlace(image: CIImage) {
-        // Change the predictedLabel text to "Detecting..." as soon as image is passed.
+        // Change the predictedLabel text as soon as image is passed.
         predictedLabel.text = "Detecting..."
         // Load the ML model into VNCoreMLModel: a container for a Core ML model used with Vision requests.
         // If the process fails, returns nil and causes the guard to be executed which throws a fatalError.
@@ -102,13 +100,12 @@ extension ViewController {
             // queue. Closures can cause retain cycles for a single reason: by default, they have a strong reference
             // to the object that uses them. [weak self] causes the closure to have a weak refernce to the object
             // that uses them. We unwrap the value of the optional type, ViewController? using self?.
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async {[weak self] in
                 // Change the predictedLabel's text to the classification result.
                 self?.predictedLabel.text = "\(topResult.identifier)"
             }
         })
         
-        // Run the Core ML GoogLeNetPlaces classifier on global dispatch queue.
         // VNImageRequestHandler is the standard Vision framework request handler; it isn’t specific to Core ML
         // models. We give it the image that came into detectPlace(image:) as an argument. And then we run the
         // handler by calling its perform method, passing an array of requests. In this case, we have only one
@@ -116,6 +113,7 @@ extension ViewController {
         // aka priority) is set to .userInteractive, which sets the task performing priority to the highest level.
         // async lets the calling queue move on without waiting until the dispatched block is executed.
         let handler = VNImageRequestHandler(ciImage: image)
+        // Run the Core ML GoogLeNetPlaces classifier on the global dispatch queue.
         DispatchQueue.global(qos: .userInteractive).async {
             do {
                 try handler.perform([request])
